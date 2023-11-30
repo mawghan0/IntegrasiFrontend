@@ -73,15 +73,15 @@ $app->configure('app');
 */
 
 $app->middleware([
-    App\Http\Middleware\CorsMiddleware::class
+    App\Http\Middleware\CorsMiddleware::class //Muhammad Yusuf Habibie
 ]);
 
 $app->routeMiddleware([
-    'auth' => App\Http\Middleware\Authorization::class, //
+    'auth' => App\Http\Middleware\Authorization::class, //Muhammad Yusuf Habibie
 ]);
 
 $app->routeMiddleware([
-    'jwt.auth' => App\Http\Middleware\JwtMiddleware::class,
+    'jwt.auth' => App\Http\Middleware\JwtMiddleware::class,//Muhammad Yusuf Habibie
 ]);
 /*
 

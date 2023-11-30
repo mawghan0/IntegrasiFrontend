@@ -13,7 +13,7 @@ class CorsMiddleware
    * @param \Closure $next
    * @return mixed
    */
-  public function handle($request, Closure $next)
+  public function handle($request, Closure $next) //RM Ferdinandrey Hananta Kusuma Nico
   {
     $headers = [
       'Access-Control-Allow-Origin' => '*',

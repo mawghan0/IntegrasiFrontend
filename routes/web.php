@@ -19,15 +19,15 @@ $router->get('/', function () use ($router) {
 
 
 
-$router->group(['prefix' => 'mahasiswa'], function () use ($router) {
+$router->group(['prefix' => 'mahasiswa'], function () use ($router) { //Muhammad Yusuf Habibie
 
-    $router->get('/', ['uses' => 'MahasiswaController@index']);
+    $router->get('/', ['uses' => 'MahasiswaController@index']); 
     $router->get('/profile', ['middleware' => 'auth', 'uses' => 'UserController@profile']);
     $router->get('/profile', ['middleware' => 'jwt.auth', 'uses' => 'UserController@profile']);
     $router->delete('/{nim}', ['uses' => 'MahasiswaController@destroy']);
 });
 
-$router->group(['prefix' => 'auth'], function () use ($router) {
+$router->group(['prefix' => 'auth'], function () use ($router) { //Muhammad Yusuf Habibie
     $router->post('/register', ['uses' => 'AuthController@register']);
     $router->post('/login', ['uses' => 'AuthController@login']);
 });

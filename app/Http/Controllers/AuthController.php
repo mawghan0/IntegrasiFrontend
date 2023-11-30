@@ -9,20 +9,20 @@ use Illuminate\Support\Str;
 
 use Firebase\JWT\JWT;
 
-class AuthController extends Controller
+class AuthController extends Controller 
 {
   /**
    * Create a new controller instance.
    *
    * @return void
    */
-  public function __construct(Request $request) //
+  public function __construct(Request $request) //Abiyyu Dwi Fawwazy
   {
     //
     $this->request = $request;
   }
   //
-  protected function jwt(Mahasiswa $user)
+  protected function jwt(Mahasiswa $user) //Abiyyu Dwi Fawwazy
   {
     $payload = [
       'iss' => 'lumen-jwt', //issuer of the token
@@ -34,7 +34,7 @@ class AuthController extends Controller
   }
 
 
-  public function register(Request $request)
+  public function register(Request $request)//Abiyyu Dwi Fawwazy
   {
     $nim = $request->nim;
     $nama = $request->nama;
@@ -55,7 +55,7 @@ class AuthController extends Controller
     ], 200);
   }
 
-  public function login(Request $request)
+  public function login(Request $request) //Abiyyu Dwi Fawwazy
   {
     $nim = $request->nim;
     $password = $request->password;
@@ -81,13 +81,13 @@ class AuthController extends Controller
     ], 200);
   }
 
-  private function base64url_encode(String $data): String
+  private function base64url_encode(String $data): String //Abiyyu Dwi Fawwazy
   {
     $base64 = base64_encode($data); // ubah json string menjadi base64
     $base64url = strtr($base64, '+/', '-_'); // ubah char '+' -> '-' dan '/' -> '_'
     return rtrim($base64url, '='); // menghilangkan '=' pada akhir string
   }
-  private function sign(String $header, String $payload, String $secret): String
+  private function sign(String $header, String $payload, String $secret): String //Abiyyu Dwi Fawwazy
   {
     $signature = hash_hmac('sha256', "{$header}.{$payload}", $secret, true);
     $signature_base64url = $this->base64url_encode($signature);

@@ -11,7 +11,7 @@ use Firebase\JWT\ExpiredException;
 
 class JwtMiddleware
 {
-  function handle($request, Closure $next, $guard = null)
+  function handle($request, Closure $next, $guard = null) //RM Ferdinandrey Hananta Kusuma Nico
   {
     $token = $request->header('token') ?? $request->query('token');
     // $token = $request->get('token');

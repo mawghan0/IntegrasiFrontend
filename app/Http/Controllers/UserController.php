@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Mahasiswa;
 use Illuminate\Http\Request;
 
-class UserController extends Controller
+class UserController extends Controller //Abiyyu Dwi Fawwazy
 {
   public function profile(Request $request)
   {

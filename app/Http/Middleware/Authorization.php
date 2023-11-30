@@ -14,7 +14,7 @@ class Authorization
    * @param \Closure $next
    * @return mixed
    */
-  public function handle($request, Closure $next)
+  public function handle($request, Closure $next) //RM Ferdinandrey Hananta Kusuma Nico
   {
     $token = $request->header('token') ?? $request->query('token');
     if (!$token) {
@@ -72,7 +72,7 @@ class Authorization
   }
 
 
-  private function base64url_encode(string $data): string
+  private function base64url_encode(string $data): string //RM Ferdinandrey Hananta Kusuma Nico
   {
     $base64 = base64_encode($data);
     $base64url = strtr($base64, '+/', '-_');
